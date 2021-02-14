@@ -11,9 +11,9 @@ gui.hide()
 const fov = 75
 const aspect = window.innerWidth / window.innerHeight
 const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 );
-camera.position.x = 0;
-camera.position.y = 0;
-camera.position.z = 3;
+camera.position.x = 20;
+camera.position.y = 50;
+camera.position.z = -70;
 
 // Material
 const material = new THREE.MeshBasicMaterial( 
@@ -40,11 +40,21 @@ loader.load(
     gltf.scene.traverse( node => 
       { if (node.isMesh) { 
         node.material = material; 
+        node.position.x = -50; 
+        node.position.z = 50; 
+        camera.lookAt(node.position)
       } }
     );
 	scene.add( gltf.scene )
+  console.log(gltf.scene)
 })
-// camera.lookAt(scene.position)
+// if (malla) console.log(malla)
+// const mesh = new THREE.Mesh( malla, material );
+// scene.add( mesh );
+
+// renderer.setAnimationLoop(() => {
+//   console.log(mesh);
+// });
 
 //Axes helper
 const axesHelper = new THREE.AxesHelper()
@@ -59,10 +69,8 @@ t = performance.now();
 console.log("tiempo "+t)
 
 const animate = () => {
-  requestAnimationFrame(animate);
-  // plano.rotation.x += 0.001;
-  // modelo1.rotation.x *= 0.001
   renderer.render(scene, camera);
+  requestAnimationFrame(animate);
 };
 
 // Renderer
@@ -76,15 +84,15 @@ const resize = () => {
 };
 
 export const createScene = (el) => {
+  const controls = new OrbitControls(camera,el)
+  // controls.enableDamping = true
+  // controls.update()
   renderer = new THREE.WebGLRenderer(
     { 
       antialias: true, 
       canvas: el
     }
     );
-  const controls = new OrbitControls(camera,el)
-  // controls.enableDamping = true
-  // controls.update()
   resize();
   animate();
 };
