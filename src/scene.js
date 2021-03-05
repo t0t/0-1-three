@@ -95,7 +95,8 @@ const resize = () => {
 
 export const createScene = (el) => {
   const controls = new OrbitControls(camera,el)
-  controls.enabled = false
+  controls.enabled = true
+  controls.enableZoom = false;
   controls.enableDamping = true
   controls.update()
   renderer = new THREE.WebGLRenderer(

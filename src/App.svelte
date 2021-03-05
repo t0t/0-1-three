@@ -47,15 +47,20 @@
 		color: aquamarine;
 	}
 	.content {
-		font-family: 'Montserrat', sans-serif;
+
 		position: fixed;
 		top: 50px;
 		right: 50px;
 		left: 50px;
-		color: #ccc;
 	}
 	main {
+		font-family: 'Montserrat', sans-serif;
+		color: #ccc;
 		background-color: black;
+	}
+	section {
+		margin-left: 50px;
+		padding-bottom: 50px;
 	}
 </style>
 
@@ -74,15 +79,16 @@
 	<div class="content">
 		<h1>+0+1234</h1>
 		<!-- <h2>{#each timeArray as t}{t}{/each}</h2> -->
-		<h2>Svelte + Three + Blender + 3D Printing</h2>
-		<p>Explorando la intersección entre diferentes mundos</p>
-		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #sass #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small><br>
-		<a href="http://sergiofores.es">sergiofores.es</a>
 	</div>
 
 	<canvas bind:this={el} class="webgl"/>
 	
+	<img src="images/02234-14.png" alt="">
+	
 	<section>
-		<img src="images/02234-14.png" alt="">
+		<h2>Svelte + Three + Blender + 3D Printing</h2>
+		<p>Explorando la intersección entre diferentes mundos</p>
+		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #sass #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small><br>
+		<a href="http://sergiofores.es">sergiofores.es</a>
 	</section>
 </main>
