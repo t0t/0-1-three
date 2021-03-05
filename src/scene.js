@@ -2,7 +2,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import * as dat from "dat.gui"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+console.log(DRACOLoader)
 //GUI Debug
 const gui = new dat.GUI({closed:true})
 gui.hide()
@@ -40,9 +41,13 @@ scene.add(light);
 scene.background = new THREE.Color("dimgrey");
 
 // Model loader
+const dracoLoader = new DRACOLoader()
+dracoLoader.setDecoderPath("/draco/")
 const loader = new GLTFLoader();
+loader.setDRACOLoader(dracoLoader)
+
 loader.load( 
-  '/models/model-4.glb', 
+  '/models/draco.glb', 
   ( gltf ) => {
     gltf.scene.traverse( node => 
       { if (node.isMesh) { 

@@ -58,7 +58,8 @@
 		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam error eos eaque, perspiciatis libero aliquam suscipit repudiandae atque quod nostrum tempora doloremque voluptates repellendus praesentium, voluptas itaque! Eveniet, blanditiis sequi!</p>
 		<h4>Areas de interés:</h4>
 		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #sass #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small>
-		<img src="images/02234-14.png" alt="" width="400">
+		<img src="images/02234-14.png" alt="" width="100">
+		<p>sss</p>
 	</div>
 	<canvas bind:this={el} class="webgl"/>
 </main>
