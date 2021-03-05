@@ -7,9 +7,15 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 const gui = new dat.GUI({closed:true})
 gui.hide()
 
+// Sizes
+const sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight
+}
+
 // Cámara
 const fov = 40
-const aspect = window.innerWidth / window.innerHeight
+const aspect = sizes.width / sizes.height
 const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 );
 camera.position.x = 10;
 camera.position.y = 10;
@@ -33,6 +39,7 @@ const scene = new THREE.Scene();
 scene.add(light);
 scene.background = new THREE.Color("dimgrey");
 
+// Model loader
 const loader = new GLTFLoader();
 loader.load( 
   '/models/model-4.glb', 
@@ -47,17 +54,6 @@ loader.load(
 	scene.add( gltf.scene )
   console.log(gltf.scene)
 })
-// if (malla) console.log(malla)
-// const mesh = new THREE.Mesh( malla, material );
-// scene.add( mesh );
-
-// renderer.setAnimationLoop(() => {
-//   console.log(mesh);
-// });
-
-//Axes helper
-const axesHelper = new THREE.AxesHelper()
-scene.add(axesHelper)
 
 //GUI Debug
 // gui.add(plano.position, "x").min(-3).max(3).step(0.01).name("Posicion X")
@@ -67,31 +63,43 @@ export let t = "";
 t = performance.now();
 console.log("tiempo "+t)
 
+// Animations
+const clock = new THREE.Clock()
 const animate = () => {
-  requestAnimationFrame(animate);
+  const elapsedTime = clock.getElapsedTime()
+  scene.rotation.x = Math.sin(elapsedTime)
+  scene.rotation.y = Math.sin(elapsedTime)
+
   renderer.render(scene, camera);
+  requestAnimationFrame(animate);
 };
 
 // Renderer
 let renderer;
 
 const resize = () => {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  camera.aspect = aspect;
+  // Update sizes
+  sizes.width = window.innerWidth
+  sizes.height = window.innerHeight
+  // Update camera
+  camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
+  // Update renderer and canvas
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 };
 
 export const createScene = (el) => {
   const controls = new OrbitControls(camera,el)
-  // controls.enableDamping = true
+  controls.enabled = false
+  controls.enableDamping = true
   // controls.update()
   renderer = new THREE.WebGLRenderer(
     { 
       antialias: true, 
       canvas: el
     }
-    );
+  );
   resize();
   animate();
 };
