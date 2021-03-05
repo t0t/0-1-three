@@ -27,7 +27,7 @@ camera.position.z = 10;
 const material = new THREE.MeshStandardMaterial( 
   {
     // map: doorColorTexture,
-    color: "#333333", 
+    color: "#666666", 
     side: THREE.DoubleSide
     // wireframe: true
   }
@@ -37,18 +37,28 @@ material.roughness = 0.4
 // Lights
 const ambientlight = new THREE.AmbientLight()
 ambientlight.color = new THREE.Color("#ffffff")
-ambientlight.intensity = 0.5
+ambientlight.intensity = 0.3
 ambientlight.position.set(-1, 3, 2)
 
-const pointLight = new THREE.PointLight( 0xffffff, 1 )
+const rectAreaLight = new THREE.RectAreaLight("#3f2613", 4.3, 9, 9)
+rectAreaLight.position.set(5,10,2.5)
+rectAreaLight.lookAt(new THREE.Vector3())
+
+
+const pointLight = new THREE.PointLight( "#b4a48a", 1.5 )
 pointLight.position.x = 1
 pointLight.position.y = 3
 pointLight.position.z = 5
+// color, intensidad, distancia, angulo, penumbra, 
+const spotLight = new THREE.SpotLight( 0xffffff, 3.4, 70, 13, 20, 0.05)
+pointLight.position.set(10,15,25)
 
 // Escena
 const scene = new THREE.Scene();
 scene.add(ambientlight);
 scene.add(pointLight)
+scene.add(rectAreaLight)
+scene.add(spotLight)
 scene.background = new THREE.Color("#333333");
 
 // Model loader
@@ -73,6 +83,7 @@ loader.load(
 
 //GUI Debug
 gui.add(ambientlight, "intensity").min(0).max(2).step(0.1)
+gui.add(rectAreaLight, "intensity").min(0).max(20).step(0.1)
 
 let t
 t = performance.now();
