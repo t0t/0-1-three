@@ -29,14 +29,33 @@
 
 </script>
 <style>
+	* {
+		line-height: 1.8;
+	}
+	h1 {
+		margin-top: 0;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+	a,a:visited {
+		color: teal;
+		text-decoration: none;
+	}
+	a:hover {
+		color: aquamarine;
+	}
 	.content {
 		font-family: 'Montserrat', sans-serif;
 		position: fixed;
-		top: 0;
-		right: 0;
-		left: 0;
-		color: beige;
-		background-color: rgba(0,0,0,0.2);
+		top: 50px;
+		right: 50px;
+		left: 50px;
+		color: #ccc;
+	}
+	main {
+		background-color: black;
 	}
 </style>
 
@@ -53,13 +72,17 @@
 
 <main>
 	<div class="content">
-		<h1>0-1234</h1>
-		<h2>{#each timeArray as t}{t}{/each}</h2>
-		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam error eos eaque, perspiciatis libero aliquam suscipit repudiandae atque quod nostrum tempora doloremque voluptates repellendus praesentium, voluptas itaque! Eveniet, blanditiis sequi!</p>
-		<h4>Areas de interés:</h4>
-		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #sass #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small>
-		<img src="images/02234-14.png" alt="" width="100">
-		<p>sss</p>
+		<h1>+0+1234</h1>
+		<!-- <h2>{#each timeArray as t}{t}{/each}</h2> -->
+		<h2>Svelte + Three + Blender + 3D Printing</h2>
+		<p>Explorando la intersección entre diferentes mundos</p>
+		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #sass #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small><br>
+		<a href="http://sergiofores.es">sergiofores.es</a>
 	</div>
+
 	<canvas bind:this={el} class="webgl"/>
+	
+	<section>
+		<img src="images/02234-14.png" alt="">
+	</section>
 </main>
