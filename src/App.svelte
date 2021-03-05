@@ -83,8 +83,8 @@
 
 	<canvas bind:this={el} class="webgl"/>
 	
-	<img src="images/02234-14.png" alt="">
-	
+	<img src="images/02234-14.jpg" alt="">
+
 	<section>
 		<h2>Svelte + Three + Blender + 3D Printing</h2>
 		<p>Explorando la intersección entre diferentes mundos</p>
