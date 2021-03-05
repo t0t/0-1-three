@@ -1,12 +1,13 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-// import * as dat from "dat.gui"
+import * as dat from "dat.gui"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 //GUI Debug
-// const gui = new dat.GUI({closed:true})
-// gui.hide()
+const gui = new dat.GUI({closed:true})
+gui.hide()
+
 
 // Sizes
 const sizes = {
@@ -15,30 +16,40 @@ const sizes = {
 }
 
 // Cámara
-const fov = 30
+const fov = 55
 const aspect = sizes.width / sizes.height
-const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 );
+const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 )
 camera.position.x = 10;
-camera.position.y = 10;
+camera.position.y = 5;
 camera.position.z = 10;
 
 // Material
-const material = new THREE.MeshBasicMaterial( 
+const material = new THREE.MeshStandardMaterial( 
   {
-    color: 0x777777, 
-    side: THREE.DoubleSide,
-    wireframe: true
+    // map: doorColorTexture,
+    color: "#333333", 
+    side: THREE.DoubleSide
+    // wireframe: true
   }
 );
+material.roughness = 0.4
 
 // Lights
-const light = new THREE.DirectionalLight( 0xff0000);
-light.position.set(-1,3,2)
+const ambientlight = new THREE.AmbientLight()
+ambientlight.color = new THREE.Color("#ffffff")
+ambientlight.intensity = 0.5
+ambientlight.position.set(-1, 3, 2)
+
+const pointLight = new THREE.PointLight( 0xffffff, 1 )
+pointLight.position.x = 1
+pointLight.position.y = 3
+pointLight.position.z = 5
 
 // Escena
 const scene = new THREE.Scene();
-scene.add(light);
-// scene.background = new THREE.Color("dimgrey");
+scene.add(ambientlight);
+scene.add(pointLight)
+scene.background = new THREE.Color("#333333");
 
 // Model loader
 const dracoLoader = new DRACOLoader()
@@ -61,10 +72,9 @@ loader.load(
 })
 
 //GUI Debug
-// gui.add(plano.position, "x").min(-3).max(3).step(0.01).name("Posicion X")
-// gui.add(plano, "visible")
+gui.add(ambientlight, "intensity").min(0).max(2).step(0.1)
 
-export let t = "";
+let t
 t = performance.now();
 console.log("tiempo "+t)
 
@@ -72,7 +82,7 @@ console.log("tiempo "+t)
 const clock = new THREE.Clock()
 const animate = () => {
   const elapsedTime = clock.getElapsedTime()
-  scene.rotation.y = 0.3 * elapsedTime
+  scene.rotation.y = 0.09 * elapsedTime
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);

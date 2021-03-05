@@ -5,6 +5,7 @@
 	onMount(() => {
 		createScene(el)
 	})
+
 	const d = new Date();
 	const year = d.getFullYear();
 	const month = d.getMonth()+1;
@@ -29,6 +30,9 @@
 
 </script>
 <style>
+	:global(body) {
+		margin: 0;
+	}
 	* {
 		line-height: 1.8;
 	}
@@ -62,10 +66,65 @@
 		margin-left: 50px;
 		padding-bottom: 50px;
 	}
-	#btn {
-		position: fixed;
-		background-color: red;
+	.point
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		/* pointer-events: none; */
 	}
+
+	.point .label
+	{
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: #00000077;
+		border: 1px solid #ffffff77;
+		color: #ffffff;
+		font-family: Helvetica, Arial, sans-serif;
+		text-align: center;
+		line-height: 40px;
+		font-weight: 100;
+		font-size: 14px;
+		cursor: help;
+		transform: scale(0, 0);
+		transition: transform 0.3s;
+	}
+
+	.point .text
+	{
+		position: absolute;
+		top: 30px;
+		left: -120px;
+		width: 200px;
+		padding: 20px;
+		border-radius: 4px;
+		background: #00000077;
+		border: 1px solid #ffffff77;
+		color: #ffffff;
+		line-height: 1.3em;
+		font-family: Helvetica, Arial, sans-serif;
+		font-weight: 100;
+		font-size: 14px;
+		opacity: 0;
+		transition: opacity 0.3s;
+		pointer-events: none;
+	}
+
+	.point:hover .text
+	{
+		opacity: 1;
+	}
+
+	.point.visible .label
+	{
+		transform: scale(1, 1);
+	}
+
 </style>
 
 <!-- {#await promesa}
@@ -84,8 +143,6 @@
 		<h1>+0+1234</h1>
 		<!-- <h2>{#each timeArray as t}{t}{/each}</h2> -->
 	</div>
-
-	<button id="btn">botón</button>
 
 	<canvas bind:this={el} class="webgl"/>
 	
