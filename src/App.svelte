@@ -62,6 +62,10 @@
 		margin-left: 50px;
 		padding-bottom: 50px;
 	}
+	#btn {
+		position: fixed;
+		background-color: red;
+	}
 </style>
 
 <!-- {#await promesa}
@@ -81,6 +85,8 @@
 		<!-- <h2>{#each timeArray as t}{t}{/each}</h2> -->
 	</div>
 
+	<button id="btn">botón</button>
+
 	<canvas bind:this={el} class="webgl"/>
 	
 	<img src="images/02234-14.jpg" alt="">
@@ -88,7 +94,7 @@
 	<section>
 		<h2>Svelte + Three + Blender + 3D Printing</h2>
 		<p>Explorando la intersección entre diferentes mundos</p>
-		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #sass #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small><br>
+		<small>#creativecoding #proceduraldesign #threejs #svelte #blender #cabala #art #metafísica #datavisualization #geometriasagrada #astrologia</small><br>
 		<a href="http://sergiofores.es">sergiofores.es</a>
 	</section>
 </main>
