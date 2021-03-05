@@ -8,12 +8,12 @@ const gui = new dat.GUI({closed:true})
 gui.hide()
 
 // Cámara
-const fov = 75
+const fov = 40
 const aspect = window.innerWidth / window.innerHeight
 const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 );
-camera.position.x = 20;
-camera.position.y = 50;
-camera.position.z = -70;
+camera.position.x = 10;
+camera.position.y = 10;
+camera.position.z = 10;
 
 // Material
 const material = new THREE.MeshBasicMaterial( 
@@ -35,13 +35,12 @@ scene.background = new THREE.Color("dimgrey");
 
 const loader = new GLTFLoader();
 loader.load( 
-  '/models/model-1.glb', 
+  '/models/model-4.glb', 
   ( gltf ) => {
     gltf.scene.traverse( node => 
       { if (node.isMesh) { 
         node.material = material; 
-        node.position.x = -50; 
-        node.position.z = 50; 
+        node.position.x = 0; 
         camera.lookAt(node.position)
       } }
     );
@@ -69,8 +68,8 @@ t = performance.now();
 console.log("tiempo "+t)
 
 const animate = () => {
-  renderer.render(scene, camera);
   requestAnimationFrame(animate);
+  renderer.render(scene, camera);
 };
 
 // Renderer
