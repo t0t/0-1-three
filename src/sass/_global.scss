@@ -1,0 +1,18 @@
+@import "_variables.scss";
+
+a,a:visited {
+    color: $primary_color;
+    text-decoration: none;
+}
+a:hover {
+    color: $primary_color;
+}
+
+main {
+    font-family: 'Montserrat', sans-serif;
+    color: $white_color;
+}
+
+* {
+    line-height: 1.8;
+}

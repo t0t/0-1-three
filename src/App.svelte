@@ -8,44 +8,30 @@
 	}
 </script>
 
-<style>
+<style lang="scss" global>
+
+	@import 'sass/_global.scss';
+
 	:global(body) {
 		margin: 0;
-		background-color: black;
-	}
-	* {
-		line-height: 1.8;
-	}
-	h1 {
-		margin-top: 0;
-	}
-	a,a:visited {
-		color: teal;
-		text-decoration: none;
-	}
-	a:hover {
-		color: aquamarine;
+		background-color: $black_color;
 	}
 
-	main {
-		font-family: 'Montserrat', sans-serif;
-		color: white;
-	}
 	nav {
 		position: fixed;
 		z-index: 100;
-		top: 15px;
-		left: 15px;
+		top: $base_size;
+		left: $base_size;
 	}
 	.nav-link {
 		padding: 8px;
-		color: black;
-		background-color: white;
+		color: $black_color;
+		background-color: $white_color;
 		margin: 3px;
 	}
 	.nav-link.active {
-		color: white;
-		background-color: black;
+		color: $white_color;
+		background-color: $black_color;
 	}
 	.MainContent {
 		/* padding-top: 50px; */
