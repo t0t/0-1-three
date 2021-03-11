@@ -28,8 +28,8 @@ const material = new THREE.MeshStandardMaterial(
   {
     // map: doorColorTexture,
     color: "#666666", 
-    side: THREE.DoubleSide
-    // wireframe: true
+    // side: THREE.DoubleSide
+    wireframe: true
   }
 );
 material.roughness = 0.4
@@ -68,7 +68,7 @@ const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader)
 
 loader.load( 
-  '/models/draco.glb', 
+  '/models/draco2.glb', 
   ( gltf ) => {
     gltf.scene.traverse( node => 
       { if (node.isMesh) { 
@@ -93,7 +93,7 @@ console.log("tiempo "+t)
 const clock = new THREE.Clock()
 const animate = () => {
   const elapsedTime = clock.getElapsedTime()
-  scene.rotation.y = 0.09 * elapsedTime
+  // scene.rotation.y = 0.09 * elapsedTime
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
