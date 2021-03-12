@@ -8,7 +8,7 @@
 	}
 </script>
 
-<style lang="scss" global>
+<style lang="scss">
 
 	@import 'sass/_global.scss';
 
@@ -19,15 +19,20 @@
 
 	nav {
 		position: fixed;
-		z-index: 100;
+		z-index: 5;
 		top: $base_size;
 		left: $base_size;
+		background-color: blue;
+		padding: 5px;
 	}
 	.nav-link {
 		padding: 8px;
 		color: $black_color;
 		background-color: $white_color;
 		margin: 3px;
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	.nav-link.active {
 		color: $white_color;
@@ -44,11 +49,11 @@
 <main>
 	<nav class="MainNav">
 		{#each navOptions as option, i}
-			<button 
+			<a 
 				class={intSelected==i ? "nav-link active" : "nav-link"} 
-				on:click={changeComponent} id={i} role="tab">
+				on:click={changeComponent} id={i}>
 				{option.page}
-			</button>
+			</a>
 		{/each}
 	</nav>
 	<section class="MainContent">

@@ -2,15 +2,36 @@
     import {onMount} from 'svelte'
     import {createScene} from '../scene'
 	let el
+    // let coordenadas = getCoords()
 	onMount(() => {
-		createScene(el)
+        createScene(el)
+        return () => {
+        console.log("desmontado")
+        };
 	})
+
+	
+	// async function getCoords() {
+    //     const response = await fetch("./data/coordenadas.json",)
+	// 	if(response.status === 200) {
+    //         const resultado = await response.json()
+	// 		// console.log(`resultado: ${resultado.coords}`)
+    //         coordenadas = resultado.coords
+    //         return coordenadas
+    //     } else {
+    //         throw new Error("Hubo un error en el request")
+    //     }
+    // }
+    // console.log(`coordenadas ${coordenadas[0]}`)
+
 </script>
 
-<style>
+<style lang="scss">
+
+	@import '../sass/_global.scss';
     .overlay {
         position: fixed;
-        left: 50%;
+        left: $base_size / 2;
     }
 </style>
 
