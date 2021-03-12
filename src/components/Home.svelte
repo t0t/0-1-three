@@ -1,42 +1,44 @@
 <script>
     import {onMount} from 'svelte'
+    import Layout from './Layout.svelte';
     import {createScene} from '../scene'
 	let el
-    // let coordenadas = getCoords()
-	onMount(() => {
-        createScene(el)
-        return () => {
-        console.log("desmontado")
-        };
-	})
-
-	
-	// async function getCoords() {
-    //     const response = await fetch("./data/coordenadas.json",)
-	// 	if(response.status === 200) {
-    //         const resultado = await response.json()
-	// 		// console.log(`resultado: ${resultado.coords}`)
-    //         coordenadas = resultado.coords
-    //         return coordenadas
-    //     } else {
-    //         throw new Error("Hubo un error en el request")
-    //     }
-    // }
-    // console.log(`coordenadas ${coordenadas[0]}`)
-
+	onMount(() => createScene(el))
+    let outerWidth
+    let outerHeight
+    let scrollY
 </script>
 
 <style lang="scss">
-
 	@import '../sass/_global.scss';
-    .overlay {
-        position: fixed;
-        left: $base_size / 2;
-    }
+    
+    :global(img) {
+        width: 100%;
+	}
+
 </style>
 
-<div class="overlay">
-    <h1>+0+1234</h1>
-    <p>Explorando la intersección entre diferentes mundos</p>
-</div>
-<canvas bind:this={el} class="webgl"/>
+<svelte:head>
+    <title>Sergio Forés - Home page</title>
+</svelte:head>
+
+<svelte:window 
+  bind:outerWidth
+  bind:outerHeight
+  bind:scrollY
+/>
+
+<Layout>
+    <div slot="header">
+        {#if scrollY < (outerHeight/2)}
+        <p>Explorando el encuentro de lo idéntico en lo diferente</p>
+        <em>Sentir Orden y Crear Conexión</em>
+        {/if}
+    </div>
+
+    <canvas bind:this={el} class="webgl"/>
+
+    <div slot="footer">
+        <img src="./img/cover2.jpg" alt="">
+    </div>
+</Layout>

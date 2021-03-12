@@ -1,0 +1,39 @@
+$global_scale_unit: rem;
+//PHI based scaling ratio
+$h13: 321.916#{$global_scale_unit};
+$h12: 198.959#{$global_scale_unit};
+$h11: 122.966#{$global_scale_unit};
+$h10: 75.999#{$global_scale_unit};
+$h9: 46.971#{$global_scale_unit};
+$h8: 29.03#{$global_scale_unit};
+$h7: 17.942#{$global_scale_unit};
+$h6: 11.089#{$global_scale_unit};
+$h5: 6.854#{$global_scale_unit};
+$h4: 4.236#{$global_scale_unit};
+$h3: 2.618#{$global_scale_unit};
+$h2: 1.618#{$global_scale_unit};
+$h1: 1#{$global_scale_unit};
+$h0: 0.618#{$global_scale_unit};
+$h-1: 0.382#{$global_scale_unit};
+$h-2: 0.236#{$global_scale_unit};
+$h-3: 0.146#{$global_scale_unit};
+$h-4: 0.09#{$global_scale_unit};
+
+
+
+// Padding top
+@mixin padding-top($level: 0) {
+    padding-top: size($level);
+}
+// Padding bottom
+@mixin padding-bottom($level: 0) {
+    padding-bottom: size($level);
+}
+// Margin top
+@mixin margin-top($level: 0) {
+    margin-top: size($level);
+}
+// Margin bottom
+@mixin margin-bottom($level: 0) {
+    margin-bottom: size($level);
+}

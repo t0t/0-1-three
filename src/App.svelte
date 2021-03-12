@@ -11,10 +11,9 @@
 <style lang="scss">
 
 	@import 'sass/_global.scss';
-
+	
 	:global(body) {
 		margin: 0;
-		background-color: $black_color;
 	}
 
 	nav {
@@ -22,25 +21,24 @@
 		z-index: 5;
 		top: $base_size;
 		left: $base_size;
-		background-color: blue;
 		padding: 5px;
 	}
 	.nav-link {
 		padding: 8px;
-		color: $black_color;
-		background-color: $white_color;
+		color: $primary_color;
+		/* background-color: $white_color; */
 		margin: 3px;
+		border: 1px solid black;
 		&:hover {
 			cursor: pointer;
+			color: $white_color;
 		}
 	}
 	.nav-link.active {
 		color: $white_color;
 		background-color: $black_color;
 	}
-	.MainContent {
-		/* padding-top: 50px; */
-	}
+
 	button {
 		border: none;
 	}
@@ -56,10 +54,6 @@
 			</a>
 		{/each}
 	</nav>
-	<section class="MainContent">
-		{#if selected.page != "+0+1234"}
-			<h1>{selected.page}</h1>
-		{/if}
-		<svelte:component this={selected.component}/>
-	</section>
+
+	<svelte:component this={selected.component}/>
 </main>

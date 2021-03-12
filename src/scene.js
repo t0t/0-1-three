@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+// import { fetchData } from "./fetch.js"
 // import * as dat from "dat.gui"
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
@@ -16,12 +17,12 @@ const sizes = {
 }
 
 // Cámara
-const fov = 18
+const fov = 20
 const aspect = sizes.width / sizes.height
 const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 )
 camera.position.x = 5;
-camera.position.y = 20;
-camera.position.z = 20;
+camera.position.y = 3;
+camera.position.z = 10;
 
 // Material
 // const material = new THREE.MeshStandardMaterial( 
@@ -43,7 +44,6 @@ camera.position.z = 20;
 // const rectAreaLight = new THREE.RectAreaLight("#3f2613", 4.3, 9, 9)
 // rectAreaLight.position.set(5,10,2.5)
 // rectAreaLight.lookAt(new THREE.Vector3())
-
 
 // const pointLight = new THREE.PointLight( "#b4a48a", 1.5 )
 // pointLight.position.x = 1
@@ -78,15 +78,14 @@ const mesh2 = new THREE.Mesh( geometry2, material2 );
 
 // Escena
 const scene = new THREE.Scene();
-scene.background = new THREE.Color("#333333");
+// scene.background = new THREE.Color();
 scene.add( mesh2 )
 
 // Helpers
 const axesHelper = new THREE.AxesHelper( 10 );
 scene.add( axesHelper );
-
-const size = 5;
-const divisions = 5;
+const size = 20;
+const divisions = 2;
 const gridHelper = new THREE.GridHelper( size, divisions );
 scene.add( gridHelper );
 
@@ -114,11 +113,6 @@ scene.add( gridHelper );
 // gui.add(ambientlight, "intensity").min(0).max(2).step(0.1)
 // gui.add(rectAreaLight, "intensity").min(0).max(20).step(0.1)
 
-let t
-t = performance.now();
-console.log("tiempo "+t)
-
-
 // Exporter
 // const exporter = new GLTFExporter();
 // exporter.parse(scene, function ( result ) {
@@ -133,16 +127,17 @@ console.log("tiempo "+t)
 //   link.download = filename;
 //   link.click();
 // }
-
-const link = document.createElement( 'a' );
-// link.style.display = 'none';
-document.body.appendChild( link );
+// const link = document.createElement( 'a' );
+// // link.style.display = 'none';
+// document.body.appendChild( link );
+const canvas = document.querySelectorAll(".wegl")
+console.log(canvas)
 
 // Animations
-// const clock = new THREE.Clock()
+const clock = new THREE.Clock()
 const animate = () => {
-  // const elapsedTime = clock.getElapsedTime()
-  // scene.rotation.y = 0.09 * elapsedTime
+  const elapsedTime = clock.getElapsedTime()
+  scene.rotation.y = 0.09 * elapsedTime
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 };
@@ -151,28 +146,18 @@ const animate = () => {
 let renderer;
 
 const resize = () => {
-  // Update sizes
   sizes.width = window.innerWidth
   sizes.height = window.innerHeight
-  // Update camera
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
-  // Update renderer and canvas
   renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 };
 
-let data = []
-fetch('./data/coordenadas.json')
-  .then(response => response.json())
-  .then(data = data.coords);
-  // .then(data => console.log(`data: ${data.coords}`));
-  // console.log(`resultado: ${coordenadas}`)
-
 export const createScene = (el) => {
   const controls = new OrbitControls(camera,el)
   controls.enabled = true;
-  controls.enableZoom = true;
+  controls.enableZoom = false;
   controls.enableDamping = true
   controls.update()
   renderer = new THREE.WebGLRenderer(

@@ -1,4 +1,20 @@
 @import "_variables.scss";
+// ****************************************
+// @TODH BASE IMPORTS
+// ****************************************
+
+@import "_reset.scss";
+@import "_mediaqueries.scss";
+@import "_colors.scss";
+@import "_sizes.scss";
+@import "_font.scss";
+@import "_svg.scss";
+@import "_animation.scss";
+
+:global(body) {
+    background-color: $primary_color;
+    // background-color: $primary_color;
+}
 
 a,a:visited {
     color: $primary_color;
@@ -16,3 +32,4 @@ main {
 * {
     line-height: 1.8;
 }
+

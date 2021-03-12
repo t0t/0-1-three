@@ -1,0 +1,29 @@
+// ****************************************
+// ANIMATIONS
+// ****************************************
+
+@keyframes fade {
+    0% {
+    //   transform: translateY(-100px);
+      opacity: .5;
+    }
+    100% {
+    //   transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@mixin animation($anim-name: fade) {
+    animation-name: $anim-name;
+    animation-duration: .8s;
+    // animation-fill-mode: forwards;
+    // animation-iteration-count: 1;
+}
+
+a:hover {
+    @include animation;
+}
+
+// img:hover {
+//   @include animation(fade);
+// }
