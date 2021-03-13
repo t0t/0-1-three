@@ -27,17 +27,13 @@
     <canvas bind:this={el} class="webgl" />
   </div>
 
-  <BannerTexto
-    texto="Explorando el encuentro de lo idéntico en lo diferente. Sentir Orden y Crear Conexión"
-  />
+  <BannerTexto texto="Explorando el encuentro de lo idéntico en lo diferente. Sentir Orden y Crear Conexión" />
 
   <BannerFull />
 
   <VideoContainer />
 
-  <BannerHalf
-    text="Una presentación resumida del proyecto +0+1234. +0+1234 es una *hermenéutica de la Creación que observa experiencialmente sus principios universales"
-  >
+  <BannerHalf text="Una presentación resumida del proyecto +0+1234. +0+1234 es una *hermenéutica de la Creación que observa experiencialmente sus principios universales">
     <Button
       variante={3}
       text="Canal de Presentaciones"
