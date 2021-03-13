@@ -15,7 +15,6 @@
     :global(img) {
         width: 100%;
 	}
-
 </style>
 
 <svelte:head>
@@ -29,14 +28,15 @@
 />
 
 <Layout>
+    
     <div slot="header">
-        {#if scrollY < (outerHeight/2)}
-        <p>Explorando el encuentro de lo idéntico en lo diferente</p>
-        <em>Sentir Orden y Crear Conexión</em>
-        {/if}
+        <canvas bind:this={el} class="webgl"/>
     </div>
 
-    <canvas bind:this={el} class="webgl"/>
+    {#if scrollY < (outerHeight/2)}
+        <p>Explorando el encuentro de lo idéntico en lo diferente</p>
+        <em>Sentir Orden y Crear Conexión</em>
+    {/if}
 
     <div slot="footer">
         <img src="./img/cover2.jpg" alt="">

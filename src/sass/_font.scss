@@ -22,17 +22,17 @@ $base_letter_spacing: 0;
 // ****************************************
 // @TODH VERTICAL RHYTHM
 // ****************************************
-$base_font_size: $basesize * 1px;
-$base_line_height: $base_font_size * 2.3;
+$base_font_size: $basesize*1px;
+$base_line_height: $base_font_size*2.3;
 
 // 5 Escalas de tamaño
 $size-scales: (
   -2: $h-1,
   -1: $h0,
-  0: $h1,
-  1: $h2,
-  2: $h3,
-  3: $h4,
+  0:$h1,
+  1:$h2,
+  2:$h3,
+  3:$h4,
   4: $h5,
   5: $h6,
   6: $h6
@@ -59,7 +59,7 @@ $line-heights: (
 }
 
 // Funcion magica :)))
-@mixin type-setting($level: 0) {
+@mixin type-setting($level:0) {
   font-size: font-scale($level);
   line-height: line-height($level);
 }

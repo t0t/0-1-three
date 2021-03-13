@@ -1,16 +1,25 @@
 <style lang="scss">
     @import '../../sass/_global.scss';
     .Links {
-    padding-top: $h5;
-    padding-bottom: $h0;
+      padding-top: $h4;
+      padding-bottom: $h4;
+      background-color: $light_2;
+      display: grid;
+      justify-items: center;
+      align-content:center;
+
+    ul {
+      width: 100%;
+      text-align: center;
+    }
 
     svg {
       padding-top: $h1;
       margin-left: $h-1;
       margin-right: $h-1;
-      fill: $white_color;
+      fill: $primary;
       &:hover {
-        fill: $white_color;
+        fill: $primary;
       }
       @include media(s2) {
         margin-left: $h1;
@@ -18,7 +27,7 @@
       }
     }
     small {
-      color: $primary_color;
+      color: $primary;
     }
   }
 </style>

@@ -13,17 +13,16 @@
 <style lang="scss">
 	@import '../sass/_global.scss';
     .MainContent {
-        padding: $h6;
-        margin: 50px;
+        @include margin-top($h6);
+        user-select: none;
+        padding: $h4;
     }
     .MainHeader {
-        position: fixed;
         display: grid;
         align-content: center;
+        // padding-top: $h5;
         width: 100%;
-        height: 100%;
-        top: auto;
-        left: auto;
+        background-color: $primary;
         text-align: center;
     }
 </style>

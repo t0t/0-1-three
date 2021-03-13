@@ -1,7 +1,7 @@
 <script>	
 	import { navOptions } from  './components/Nav.svelte';
-	let selected = navOptions[0];
-	let intSelected = 0;
+	let selected = navOptions[1];
+	let intSelected = 1;
 	function changeComponent(event) {
 		selected = navOptions[event.srcElement.id];
 		intSelected = event.srcElement.id;
@@ -19,24 +19,24 @@
 	nav {
 		position: fixed;
 		z-index: 5;
-		top: $base_size;
-		left: $base_size;
+		top: $h3;
+		left: $h3;
 		padding: 5px;
 	}
 	.nav-link {
 		padding: 8px;
-		color: $primary_color;
-		/* background-color: $white_color; */
+		color: $white;
+		/* background-color: $tertiary; */
 		margin: 3px;
-		border: 1px solid black;
+		border: 1px solid $white;
 		&:hover {
 			cursor: pointer;
-			color: $white_color;
+			color: $tertiary;
 		}
 	}
 	.nav-link.active {
-		color: $white_color;
-		background-color: $black_color;
+		color: $white;
+		background-color: $black;
 	}
 
 	button {
