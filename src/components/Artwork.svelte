@@ -117,7 +117,7 @@
       
         <div class="ObrasContainer">
             {#each productos as producto}
-            <a class="Obra" href="/obras/{producto.id}">
+            <!-- <a class="Obra" href="/obras/{producto.id}"> -->
             <article>
                 <figure>
                     <img src="../{producto.thumb}" alt="{producto.title}">
@@ -126,7 +126,7 @@
                     </figcaption>
                 </figure>
                 </article>
-            </a>
+            <!-- </a> -->
             {/each}
         </div>
     </section>
