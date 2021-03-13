@@ -111,10 +111,10 @@ h2 {
     margin-left: $h3;
     margin-right: $h3;
   }
-  @include media(s2) {
-    margin-left: $h6;
-    margin-right: $h6;
-  }
+  // @include media(s2) {
+  //   margin-left: $h6;
+  //   margin-right: $h6;
+  // }
   @include media(s4) {
     @include type-setting(2);
     margin-left: $h7;
