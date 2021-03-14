@@ -17,8 +17,8 @@ const sizes = {
 }
 
 // Cámara
-const fov = 20
-const aspect = sizes.width / sizes.height
+const fov = 20;
+const aspect = sizes.width / sizes.height;
 const camera = new THREE.PerspectiveCamera( fov, aspect, 0.1, 1000 )
 camera.position.x = 5;
 camera.position.y = 3;
@@ -130,8 +130,9 @@ scene.add( gridHelper );
 // const link = document.createElement( 'a' );
 // // link.style.display = 'none';
 // document.body.appendChild( link );
-const canvas = document.querySelectorAll(".wegl")
-console.log(canvas)
+
+// Renderer
+let renderer;
 
 // Animations
 const clock = new THREE.Clock()
@@ -141,9 +142,6 @@ const animate = () => {
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 };
-
-// Renderer
-let renderer;
 
 const resize = () => {
   sizes.width = window.innerWidth
