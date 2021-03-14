@@ -20,17 +20,17 @@
 <style lang="scss">
     @import '../sass/_global.scss';  
     .LayoutObras {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: $h2;
-    width: 100%;
-    padding: $h2;
-    background-color: $grey;
-    h1 {
-      @include margin-bottom(1);
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: $h2;
+        width: 100%;
+        padding: $h2;
+        background-color: $grey;
+        h1 {
+            @include margin-bottom(1);
+        }
     }
-  }
 
   img {
     opacity: .55;
@@ -71,21 +71,6 @@
           grid-column: 1/3;
         } */
       }
-      &:nth-child(3) {
-          /* background-color: #fff; */
-      }
-      &:nth-child(4) {
-        /* grid-column: 1/3; */
-        /* grid-column: span 1/3; */
-        /* @include media(s2) {
-          grid-column: 2/4;
-        } */
-      }
-      &:nth-child(5) {
-        /* grid-column: span 1/3; */
-        /* grid-row: 5/7; */
-        /* background-color: #fff; */
-      }
     }
 
     figure {
@@ -118,14 +103,12 @@
         <div class="ObrasContainer">
             {#each productos as producto}
             <!-- <a class="Obra" href="/obras/{producto.id}"> -->
-            <article>
+            <article class="Obra">
                 <figure>
                     <img src="../{producto.thumb}" alt="{producto.title}">
-                    <figcaption>
-                    {producto.title}
-                    </figcaption>
+                    <figcaption>{producto.title}</figcaption>
                 </figure>
-                </article>
+            </article>
             <!-- </a> -->
             {/each}
         </div>
