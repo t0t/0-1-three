@@ -65,9 +65,6 @@
             <h1>El fundamento de la Creación, es un orden arquetípico universal, <i>+0+1234</i>, al que se va yendo eternamente y al que se llega en un instante. Vivo el Arte como técnica de meditación trascendental y como símbolo.
             </h1>
         </header>
-        <footer class="boton">
-            <Button variante={2} target="_self" text="Catálogo de Obras" url="/obras" />
-        </footer>
     </main>
     <video poster="/img/cover3.jpg" loop playsinline controls="controls">
         <source src="/img/desdelapoesiadelamateria.webm" type="video/webm" />

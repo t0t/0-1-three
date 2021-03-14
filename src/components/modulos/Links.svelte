@@ -17,7 +17,7 @@
       padding-top: $h1;
       margin-left: $h-1;
       margin-right: $h-1;
-      fill: $primary;
+      fill: $light_grey;
       &:hover {
         fill: $primary;
       }
@@ -27,7 +27,7 @@
       }
     }
     small {
-      color: $primary;
+      color: $light_grey;
     }
   }
 </style>
