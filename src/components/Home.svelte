@@ -41,7 +41,7 @@
 
 <!-- <Layout> -->
   <!-- <div slot="header"></div> -->
-  <Cover title="Sergio Forés, Arte Holístico." text="Investigo maneras coherentes de plasmar, ver y tocar lo que es sutil. Sentir un orden específico da forma a una conexión determinada con la Creación."></Cover>
+  <Cover title="Sergio Forés, Arte Holístico." text="Investigo maneras coherentes de plasmar, ver y tocar lo que es sutil. Sentir un orden específico y dar forma a una conexión auténtica y real con aquello que entendemos como la Creación."></Cover>
 
   <ThreeBanner title="3D Data-Viz. ¿Podemos tocar los datos?" text ="Este proyecto explora la mejor manera de traducir datos JSON a mallas 3D para poder ser impresas en el mundo real. Por medio de Three.js topografiamos los datos como coordenadas sobre un plano que luego se exporta a un archivo 3D">
     <canvas bind:this={el} class="webgl" />
@@ -72,11 +72,11 @@
     </div>
   </BannerHalf>
 
-  <ProductGallery></ProductGallery>
+  <ProductGallery titulo="Art works" texto="Cuadros tridimensionales de 1 metro de diámetro que representan fuerzas y vibraciones aplicadas sobre la superficie del agua. Me interesa recrear las condiciones necesarias para que las leyes de la física y el tiempo puedan quedar atrapadas en una forma." />
 
   <BannerHalf text="Haciendo mis pinitos como Youtuber :) Vuelco mis reflexiones en cápsulas en torno a metafísica, arte, símbolos, etc. Y, por supuesto desde la Hermenéutica +0+1234.">
 
-    <Button variante={0} text="Canal Youtube" url="https://www.youtube.com/channel/UC9C6HRn2RDG3bmWC4Soxtcw" />
+    <Button variante={1} text="Canal Youtube" url="https://www.youtube.com/channel/UC9C6HRn2RDG3bmWC4Soxtcw" />
 
     <div slot="hasvideo">
       <iframe
@@ -90,7 +90,7 @@
     </div>
   </BannerHalf>
 
-  <BannerHalf variante={1} text="Un producto digital es un sistema orgánico con un orden que que evoluciona análogamente al Universo. El Diseño Frontend es Arte y es holístico. Mi workflow: SvelteJS, Git, Sass, CSSGrid, Vercel, etc." img="../img/frontend.jpg">
+  <BannerHalf variante={0} text="Un producto digital es un sistema orgánico con un orden que que evoluciona análogamente al Universo. El Diseño Frontend es Arte y es holístico. Mi workflow: SvelteJS, Git, Sass, CSSGrid, Vercel, etc." img="../img/frontend.jpg">
     <Button
       variante={1}
       text="Repo en Github"
@@ -98,8 +98,7 @@
     />
   </BannerHalf>
 
-  <BannerTexto texto="El fundamento de la Creación, es un orden arquetípico universal, +0+1234, al que se va yendo eternamente y al que se llega en un instante. Vivo el Arte como técnica de meditación trascendental y como símbolo."
-    />
+  <BannerTexto texto="El fundamento de la Creación, es un orden arquetípico universal, +0+1234, al que se va yendo eternamente y al que se llega en un instante. Vivo el Arte como técnica de meditación trascendental y como símbolo." />
 
   <BannerHalf  variante={1} text="Todo son formas de arte simbólicas en si mismas y, como tales, cumplen una función mediadora capaz de abrirle lo real a la conciencia." img="../img/cover4.jpg">
 

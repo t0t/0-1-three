@@ -25,8 +25,8 @@
     }
 
     .Dark {
-        color: $quaternary;
-        border-color: $quaternary;
+        color: $dark;
+        border-color: $dark;
         &:hover {
             color: $light;
             background-color: $quaternary;

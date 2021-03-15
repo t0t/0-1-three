@@ -2,46 +2,50 @@
     import { onMount } from "svelte";
     let productos = [];
     let active = false;
-    let selected = productos[0];;
-    let intSelected = 999999;
+    let selected = productos[0];
+    let intSelected;
 
     function showInfo(event) {
         selected = productos[event.srcElement.id];
         intSelected = event.srcElement.id;
-        console.log(intSelected)
     };
     onMount(async () => {
         const res = await fetch("/data/products.json");
         productos = [...await res.json()];
     });
+    export let titulo = "";
+    export let texto = "";
 </script>
 
 <style lang="scss">
     @import "../../sass/_global.scss";
 
     .LayoutObras {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: $h2;
-    width: 100%;
-    padding: $h2;
-    background-color: $grey;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: $h2;
+        width: 100%;
+        padding: $h3;
+        background-color: $grey;
 
-    h1 {
-      @include margin-bottom(1);
+        /* h2 {
+            @include margin-bottom(0);
+        } */
+        p {
+            @include margin-bottom(0);
+        }
     }
-  }
+    
+    img {
+        object-fit: cover;
+        max-width: 100%;
+        z-index: 100;
 
-  img {
-    object-fit: cover;
-    max-width: 100%;
-    z-index: 100;
-
-    a:hover & {
-      opacity: 1;
+        a:hover & {
+            opacity: 1;
+        }
     }
-  }
 
   .ObrasContainer {
     display: grid;
@@ -72,7 +76,7 @@
     .active + figcaption {
         transform-style: preserve-3d;
         transform: scale(1);
-        transition: 0.8s;
+        transition: 0.5s;
         opacity: 1;
         z-index: 100;
         cursor: revert;
@@ -116,8 +120,8 @@
 
 <section class="LayoutObras">
   
-    <h2>Art works</h2>
-    <h3>Cuadros tridimensionales de 1 metro de diámetro que representan fuerzas y vibraciones aplicadas sobre la superficie del agua. Me interesa recrear las condiciones necesarias para que las leyes de la física y el tiempo puedan quedar atrapadas en una forma.</h3>
+    <h2>{titulo}</h2>
+    <p>{texto}</p>
   
     <div class="ObrasContainer">
         {#each productos as producto, i}

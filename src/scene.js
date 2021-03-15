@@ -130,8 +130,8 @@ scene.add( gridHelper );
 // const link = document.createElement( 'a' );
 // // link.style.display = 'none';
 // document.body.appendChild( link );
-const canvas = document.querySelectorAll(".wegl")
-console.log(canvas)
+// const canvas = document.querySelectorAll(".wegl")
+// console.log(canvas)
 
 // Animations
 const clock = new THREE.Clock()
