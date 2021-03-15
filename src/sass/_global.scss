@@ -13,10 +13,6 @@
 html {
     font-size: $basesize;
 }
-body {
-    background-color: $primary;
-    // background-color: $primary;
-}
 
 a,a:visited {
     color: $primary;
@@ -24,10 +20,6 @@ a,a:visited {
 }
 a:hover {
     color: $primary;
-}
-
-main {
-    color: $secondary;
 }
 
 * {

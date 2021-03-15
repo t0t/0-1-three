@@ -3,6 +3,7 @@
   // import Layout from "./Layout.svelte";
   import Cover from "./modulos/Cover.svelte";
   import VideoContainer from "./modulos/VideoContainer.svelte";
+  import ProductGallery from "./modulos/ProductGallery.svelte";
   import ThreeBanner from "./modulos/ThreeBanner.svelte";
   import BannerFull from "./modulos/BannerFull.svelte";
   import BannerHalf from "./modulos/BannerHalf.svelte";
@@ -12,12 +13,9 @@
   // import BlockQuote from './modulos/BlockQuote.svelte';
   import { createScene } from "../scene";
   let el;
-  let productos = [];
 
-  onMount(async () => {
+  onMount( () => {
     createScene(el)
-    const res = await fetch("/data/products.json");
-    productos = [...await res.json()];
   });
   let outerWidth;
   let outerHeight;
@@ -36,70 +34,6 @@
     width: 100%;
   }
 
-  .LayoutObras {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: $h2;
-        width: 100%;
-        padding: $h2;
-        background-color: $grey;
-        h1 {
-            @include margin-bottom(1);
-        }
-    }
-
-  img {
-    object-fit: cover;
-    max-width: 100%;
-    z-index: 100;
-
-    a:hover & {
-      opacity: 1;
-    }
-  }
-
-  .ObrasContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax($h7, 1fr));
-
-    @include media(s3) {
-      justify-items: center;
-      gap: $h3;
-    }
-
-    .Obra {
-
-      img {
-        border-radius: 50%;
-        object-fit: cover;
-        padding: $h2;
-      }
-
-      &:hover {
-        background: $dark_grey;
-      }
-
-      /* &:nth-child(1) {
-        @include media(s2) {
-          grid-column: 1/3;
-        }
-      } */
-    }
-
-    figure {
-      display: grid;
-      justify-items: center;
-      position: relative;
-    }
-  }
-
-  figcaption {
-    text-align: center;
-    display: none;
-    position: absolute;
-    bottom: $h4;
-  }
   h2 {
     text-align: center;
   }
@@ -107,9 +41,9 @@
 
 <!-- <Layout> -->
   <!-- <div slot="header"></div> -->
-  <Cover title="Sergio Forés, Artista y desarrollador Holístico." text="Mi trabajo incursiona en la belleza de la Creación, permitiendo que se exprese en su propio lenguaje."></Cover>
+  <Cover title="Sergio Forés, Arte Holístico." text="Investigo maneras coherentes de plasmar, ver y tocar lo que es sutil. Sentir un orden específico da forma a una conexión determinada con la Creación."></Cover>
 
-  <ThreeBanner title="Proyecto DataViz. ¿Podemos tocar los datos?" text ="El proyecto explora la mejor manera de traducir datos JSON a mallas 3D para poder ser impresas en el mundo real. Por medio de Three.js topografiamos los datos como coordenadas sobre un plano que luego se exporta a un archivo 3D">
+  <ThreeBanner title="3D Data-Viz. ¿Podemos tocar los datos?" text ="Este proyecto explora la mejor manera de traducir datos JSON a mallas 3D para poder ser impresas en el mundo real. Por medio de Three.js topografiamos los datos como coordenadas sobre un plano que luego se exporta a un archivo 3D">
     <canvas bind:this={el} class="webgl" />
   </ThreeBanner>
 
@@ -138,23 +72,7 @@
     </div>
   </BannerHalf>
 
-  <section class="LayoutObras">
-  
-    <h2>Galería de cuadros</h2>
-  
-    <div class="ObrasContainer">
-        {#each productos as producto}
-        <!-- <a class="Obra" href="/obras/{producto.id}"> -->
-        <article class="Obra">
-          <figure>
-            <img src="../{producto.thumb}" alt="{producto.title}">
-            <figcaption>{producto.title}</figcaption>
-          </figure>
-        </article>
-        <!-- </a> -->
-        {/each}
-    </div>
-  </section>
+  <ProductGallery></ProductGallery>
 
   <BannerHalf text="Haciendo mis pinitos como Youtuber :) Vuelco mis reflexiones en cápsulas en torno a metafísica, arte, símbolos, etc. Y, por supuesto desde la Hermenéutica +0+1234.">
 

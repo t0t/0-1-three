@@ -95,6 +95,7 @@ strong {
 
 h1 {
   @include type-setting(0);
+  font-weight: bold;
   @include media(s4) {
     @include type-setting(1);
   }
@@ -117,6 +118,7 @@ h2 {
     margin-right: $h5;
   }
 }
+h3,
 h4 {
   @include type-setting(-1);
   @include media(s1) {
