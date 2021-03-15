@@ -156,7 +156,7 @@ const resize = () => {
 
 export const createScene = (el) => {
   const controls = new OrbitControls(camera,el)
-  controls.enabled = true;
+  controls.enabled = false;
   controls.enableZoom = false;
   controls.enableDamping = true
   controls.update()

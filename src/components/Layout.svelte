@@ -19,6 +19,7 @@
         display: grid;
         align-content: center;
         width: 100%;
+        height: 100vh;
         background-color: $primary;
         text-align: center;
     }

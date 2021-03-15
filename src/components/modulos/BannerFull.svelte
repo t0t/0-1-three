@@ -1,5 +1,7 @@
 <script>
-    import Button from './Button.svelte';
+    export let title = ""
+    export let text = ""
+    export let img;
 </script>
 
 <style lang="scss">
@@ -8,6 +10,7 @@
     .BannerFull {
         padding: $h2;
         background-color: $grey_2;
+        height: 100vh;
         
         @include media(s1) {
             display: grid;
@@ -27,9 +30,6 @@
             font-weight: $weight_strong;
             @include margin-bottom(0);
             @include margin-top(0);
-            @include media(s4) {
-                /* font-weight: inherit; */
-            }
         }
 
         .BannerFullText {
@@ -41,15 +41,12 @@
                 text-align: center;
                 margin-left: $h1;
                 margin-right: $h1;
-                /* @include margin-bottom(2); */
-                @include media(s1) {
-                    /* margin-left: $h3;
-                    margin-right: $h3; */
-                }
+                /* @include media(s1) {
+                    margin-left: $h3;
+                    margin-right: $h3;
+                } */
                 @include media(s2) {
                     @include type-setting(1);
-                    /* margin-left: $h4;
-                    margin-right: $h4; */
                 }
             }
         }
@@ -57,10 +54,10 @@
 </style>
 
 <section class="BannerFull">
-    <img class="BannerFullImg" src="../img/libro.svg" alt="Portada de mi libro">
+    <img class="BannerFullImg" src="../img/{img}" alt="Imagen">
     <div class="BannerFullText">
-        <h1>Hermenéutica Universal</h1>
-        <p>Es un Libro "work in progress" que explica mi cosmovisión y el proyecto <i>+0+1234.</i> Aún no sé si finalmente será en formato ebook, en papel o un audiolibro. El tiempo dirá...</p>
-        <Button variante={3} text="Leer libro" url="https://docs.google.com/document/d/15oUQRghNb_lihCFGJ9Ls0z1PyihD_a18v1V3AohVqQ4/edit?usp=sharing" />
+        <h1>{title}</h1>
+        <p>{text}</p>
+        <slot />
     </div>
 </section>

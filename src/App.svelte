@@ -1,11 +1,13 @@
 <script>	
-	import { navOptions } from  './components/Nav.svelte';
-	let selected = navOptions[1];
-	let intSelected = 1;
-	function changeComponent(event) {
-		selected = navOptions[event.srcElement.id];
-		intSelected = event.srcElement.id;
-	}
+	// import { navOptions } from  './components/Nav.svelte';
+	// let selected = navOptions[0];
+	// let intSelected = 0;
+	// function changeComponent(event) {
+	// 	selected = navOptions[event.srcElement.id];
+	// 	intSelected = event.srcElement.id;
+	// }
+	import Home from "./components/Home.svelte";
+
 </script>
 
 <style lang="scss">
@@ -16,36 +18,10 @@
 		margin: 0;
 	}
 
-	nav {
-		position: fixed;
-		z-index: 5;
-		top: $h3;
-		left: $h3;
-		padding: 5px;
-	}
-	.nav-link {
-		padding: 8px;
-		color: $white;
-		/* background-color: $tertiary; */
-		margin: 3px;
-		border: 1px solid $white;
-		&:hover {
-			cursor: pointer;
-			color: $tertiary;
-		}
-	}
-	.nav-link.active {
-		color: $white;
-		background-color: $black;
-	}
-
-	button {
-		border: none;
-	}
 </style>
 
 <main>
-	<nav class="MainNav">
+	<!-- <nav class="MainNav">
 		{#each navOptions as option, i}
 			<a 
 				class={intSelected==i ? "nav-link active" : "nav-link"} 
@@ -53,7 +29,8 @@
 				{option.page}
 			</a>
 		{/each}
-	</nav>
+	</nav> -->
 
-	<svelte:component this={selected.component}/>
+	<Home />
+	<!-- <svelte:component this={selected.component}/> -->
 </main>
