@@ -17,24 +17,22 @@
     .BannerHalf {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-areas: 
-        "video"
-        "texto"
-        ;
-        
-        padding-top: $h3;
+        grid-template-areas: "video" "texto";
+        padding-top: 0;
         padding-right: $h3;
-        padding-bottom: 0;
         padding-left: $h3;
+        padding-bottom: $h2;
         img {
             width: 100%;
         }
         
+        @include media(s1) {
+        }
         @include media(s2) {
+            padding-bottom: 0;
+            padding-right: 0;
             grid-template-columns: 1fr 1.62fr;
-            grid-template-areas: 
-            "texto video"
-            ;
+            grid-template-areas: "texto video";
         }
 
         .BannerMedia {
@@ -56,9 +54,10 @@
             }
             h2 {
                 font-weight: bold;
+                margin-top: $h0;
+                margin-right: 0;
                 margin-bottom: $h0;
                 margin-left: 0;
-                margin-right: 0;
                 @include media(s1) {
                     font-weight: inherit;
                 }

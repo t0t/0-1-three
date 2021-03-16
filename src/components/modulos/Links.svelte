@@ -1,9 +1,10 @@
 <style lang="scss">
     @import '../../sass/_global.scss';
+
     .Links {
       padding-top: $h4;
       padding-bottom: $h4;
-      background-color: $light_2;
+      background-color: $light;
       display: grid;
       justify-items: center;
       align-content:center;

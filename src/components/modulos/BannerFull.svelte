@@ -8,36 +8,44 @@
     @import "../../sass/_global.scss";
 
     .BannerFull {
-        padding: $h2;
-        background-color: $grey_2;
-        height: 100vh;
+        background-color: $light;
         
         @include media(s1) {
+            height: 100vh;
             display: grid;
-            gap: $h3;
             grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.5fr;
             justify-items: center;
-            @include padding-top(4);
-            @include padding-bottom(4);
+            /* @include padding-top(4);
+            @include padding-bottom(4); */
         }
         @include media(s2) {
-            padding: $h4;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
         }
 
         h1 {
-            color: $light;
+            color: $light_grey;
             font-weight: $weight_strong;
             @include margin-bottom(0);
             @include margin-top(0);
+        }
+
+        .BannerFullImg {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: $h6;
         }
 
         .BannerFullText {
             align-self: center;
             display: grid;
             justify-items: center;
+            padding-bottom: $h2;
             p {
-                color: $light;
+                color: $dark;
                 text-align: center;
                 margin-left: $h1;
                 margin-right: $h1;
@@ -54,7 +62,9 @@
 </style>
 
 <section class="BannerFull">
-    <img class="BannerFullImg" src="../img/{img}" alt="Imagen">
+    <div class="BannerFullImg"
+    style="background-image:url('../img/{img}');"
+    ></div>
     <div class="BannerFullText">
         <h1>{title}</h1>
         <p>{text}</p>
