@@ -14,6 +14,7 @@
     }
 
     svg {
+      max-width: $h2;
       padding-top: $h1;
       margin-left: $h-1;
       margin-right: $h-1;

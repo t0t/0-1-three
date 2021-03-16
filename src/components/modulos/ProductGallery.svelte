@@ -28,10 +28,7 @@
         width: 100%;
         padding: $h3;
         background-color: $grey;
-
-        /* h2 {
-            @include margin-bottom(0);
-        } */
+        
         p {
             @include margin-bottom(0);
         }

@@ -14,16 +14,25 @@
 <style lang="scss">
     @import "../../sass/_global.scss";
     a {
-        display: inherit;
-        padding: $h1;
+        display: flex;
+        align-items: center;
+        padding: $h0 $h1;
         text-decoration: none;
         border-width: 1px;
         border-style: solid;
+        border-radius: 4px;
         @include margin-top(1);
         @include margin-bottom(1);
-        max-width: $h7;
+        max-width: $h8;
+        position: relative;
+        &:after {
+            font-size: $h2;
+            padding-left: $h0;
+        }
     }
-
+    a[target="_blank"]:after {
+        content: " ⤤";
+    }
     .Dark {
         color: $dark;
         border-color: $dark;
@@ -34,12 +43,12 @@
         }
     }
     .Light {
-        color: $primary;
-        border-color: $primary;
+        color: $light_2;
+        border-color: $light_2;
         &:hover {
-            color: $light;
-            background-color: $primary;
-            border-color: $primary;
+            color: $dark;
+            background-color: $light_2;
+            border-color: $light_2;
         }
     }
     .Colored {

@@ -1,10 +1,12 @@
 <script>
+    export let title = "";
     export let text = "Texto inicial";
     export let img = "";
     export let variante = 0;
     let modificador = [
         "Light",
-        "Dark"
+        "Dark",
+        "Colored"
     ];
     
 </script>
@@ -41,7 +43,6 @@
             justify-items: start;
             align-self: center;
             justify-self: center;
-            margin-bottom: $h2;
             grid-area: texto;
 
             @include media(s2) {
@@ -49,22 +50,30 @@
                 margin-right: $h2;
                 max-width: $bp1;
             }
-
-            p {
+            h2 {
+                font-weight: bold;
+                margin-bottom: $h0;
+                margin-left: 0;
+                margin-right: 0;
                 @include margin-top(1);
+                @include media(s1) {
+                    font-weight: inherit;
+                }
             }
         }
     }
     .Light {
-        background-color: $light_grey;
+        background-color: $light_2;
         color: $dark_grey;
         p {
             color: $dark_grey;
-            /* font-weight: 500; */
         }
     }
     .Dark {
         background-color: $dark_grey;
+    }
+    .Colored {
+        background-color: $dark;
     }
 </style>
 
@@ -81,6 +90,7 @@
     </div>
     
     <div class="BannerHalfText">
+        <h2>{title}</h2>
         <p>{text}</p>
         <slot></slot>
     </div>
