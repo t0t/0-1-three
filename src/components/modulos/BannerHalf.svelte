@@ -6,7 +6,8 @@
     let modificador = [
         "Light",
         "Dark",
-        "Colored"
+        "Colored",
+        "Light2"
     ];
     
 </script>
@@ -21,7 +22,10 @@
         "texto"
         ;
         
-        padding: $h2;
+        padding-top: $h3;
+        padding-right: $h3;
+        padding-bottom: 0;
+        padding-left: $h3;
         img {
             width: 100%;
         }
@@ -55,7 +59,6 @@
                 margin-bottom: $h0;
                 margin-left: 0;
                 margin-right: 0;
-                @include margin-top(1);
                 @include media(s1) {
                     font-weight: inherit;
                 }
@@ -74,6 +77,13 @@
     }
     .Colored {
         background-color: $dark;
+    }
+    .Light2 {
+        background-color: $light;
+        color: $dark;
+        p {
+            color: $dark;
+        }
     }
 </style>
 
