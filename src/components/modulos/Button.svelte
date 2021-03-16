@@ -1,6 +1,6 @@
 <script>
-    export let text = "Name";
-    export let url = "url";
+    export let text = "";
+    export let url = "";
     export let target = "_blank";
     export let variante = 0;
     let modificador = [
@@ -13,7 +13,12 @@
 
 <style lang="scss">
     @import "../../sass/_global.scss";
-    a {
+    button {
+        background-color: transparent;
+    }
+    a,
+    button {
+        font-size: inherit;
         display: flex;
         align-items: center;
         padding: $h0 $h1;
@@ -28,6 +33,9 @@
         &:after {
             font-size: $h2;
             padding-left: $h0;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
     a[target="_blank"]:after {
@@ -71,6 +79,12 @@
     }
 </style>
 
-<a href="{url}" target="{target}" class="{modificador[variante]}">
-    {text}
-</a>
+{#if url}
+    <a href="{url}" target="{target}" class="{modificador[variante]}">
+        {text}
+    </a>
+{:else}
+    <button on:click class="{modificador[variante]}">
+        {text}
+    </button>
+{/if}

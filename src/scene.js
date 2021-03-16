@@ -12,8 +12,10 @@ import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
 
 // Sizes
 const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
+  width: 300,
+  height: 150
+  // width: window.innerWidth,
+  // height: window.innerHeight
 }
 
 // Cámara
@@ -146,8 +148,8 @@ const animate = () => {
 let renderer;
 
 const resize = () => {
-  sizes.width = window.innerWidth
-  sizes.height = window.innerHeight
+  sizes.width = window.innerWidth - 100;
+  sizes.height = window.innerHeight - 400;
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
   renderer.setSize(sizes.width, sizes.height);

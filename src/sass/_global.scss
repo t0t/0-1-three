@@ -7,12 +7,14 @@
 @import "_colors.scss";
 @import "_sizes.scss";
 @import "_font.scss";
+@import "_forms.scss";
 // @import "_svg.scss";
 @import "_animation.scss";
 
 html {
     font-size: $basesize;
 }
+
 
 // a,a:visited {
 //     color: $primary;
@@ -21,6 +23,7 @@ html {
 // a:hover {
 //     color: $primary;
 // }
+
 
 * {
     line-height: 1.8;

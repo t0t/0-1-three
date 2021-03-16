@@ -16,8 +16,6 @@
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 0.5fr;
             justify-items: center;
-            /* @include padding-top(4);
-            @include padding-bottom(4); */
         }
         @include media(s2) {
             grid-template-rows: 1fr;
@@ -33,7 +31,7 @@
 
         .BannerFullImg {
             background-size: cover;
-            background-position: center center;
+            background-position: right center;
             background-repeat: no-repeat;
             width: 100%;
             min-height: $h6;
@@ -49,10 +47,7 @@
                 text-align: center;
                 margin-left: $h1;
                 margin-right: $h1;
-                /* @include media(s1) {
-                    margin-left: $h3;
-                    margin-right: $h3;
-                } */
+
                 @include media(s2) {
                     @include type-setting(1);
                 }
