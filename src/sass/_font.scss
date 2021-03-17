@@ -11,7 +11,7 @@ $secondary_font: 'Montserrat', sans-serif;
 // @TODH GLOBAL SIZES
 // ****************************************
 
-$basesize: 11;
+$basesize: 16px;
 
 $weight_thin: 400;
 $weight_normal: 500;
@@ -22,17 +22,17 @@ $base_letter_spacing: 0;
 // ****************************************
 // @TODH VERTICAL RHYTHM
 // ****************************************
-$base_font_size: $basesize*1px;
-$base_line_height: $base_font_size*2.3;
+$base_font_size: $basesize;
+$base_line_height: $base_font_size * 1.62;
 
-// 5 Escalas de tamaño
+// 6 Escalas de tamaño
 $size-scales: (
   -2: $h-1,
   -1: $h0,
-  0:$h1,
-  1:$h2,
-  2:$h3,
-  3:$h4,
+  0: $h1,
+  1: $h2,
+  2: $h3,
+  3: $h4,
   4: $h5,
   5: $h6,
   6: $h6
@@ -74,9 +74,7 @@ small {
   font-family: $secondary_font;
   letter-spacing: $base_letter_spacing;
   font-weight: $weight_normal;
-
   color: $light_2;
-  // text-decoration: underline;
 }
 
 i {

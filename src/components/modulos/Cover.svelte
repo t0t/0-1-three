@@ -31,40 +31,33 @@
 
         @include media(s1) {
             display: grid;
-            align-items: center;
-            grid-auto-flow: column;
-            gap: $h0;
+            align-items: revert;
+            /* gap: $h0; */
             grid-template-areas: 
             "subtitle"
             "title"
-            "text"
-            ;
+            "text";
         }
         > * {
-            border: 0.5px dotted $grey;
             padding: $h1;
-
             @include media(s1) {
-                /* background-color: #fff; */
+                align-self: center;
             }
         }
         
         @include media(s1) {
             .CoverTitle {
                 grid-area: title;
-                /* align-self: end; */
-                /* border: 0.5px dotted $light; */
+                @include type-setting(3);
             }
             .CoverSubTitle {
+                border-bottom: 0.5px dotted $light;
                 grid-area: subtitle;
                 margin: 0;
-                /* align-self: start; */
-                /* border: 0.5px dotted $light; */
             }
             .CoverText {
-                /* align-self: start; */
                 grid-area: text;
-                /* border: 0.5px dotted $light; */
+                border: 0.5px dotted $light;
             }
         }
     }

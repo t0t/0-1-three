@@ -18,6 +18,10 @@
 		margin: 0;
 		background-color: $dark;
 	}
+	:global(html) {
+		font-size: $base_font_size;
+		
+	}
 
 </style>
 
