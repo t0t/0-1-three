@@ -17,13 +17,13 @@
 
     .Cover {
         height: 100vh;
-        padding: $h0;
+        padding: $h2;
         color: $white;
         background-size: cover;
         background-image: url("../img/01234-7.jpg");
         background-attachment: fixed;
         background-repeat: no-repeat;
-        text-align: center;
+        /* text-align: left; */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -31,33 +31,32 @@
 
         @include media(s1) {
             display: grid;
-            align-items: revert;
-            /* gap: $h0; */
+            align-items: end;
             grid-template-areas: 
-            "subtitle"
             "title"
             "text";
+            text-align: center;
         }
         > * {
-            padding: $h1;
-            @include media(s1) {
-                align-self: center;
-            }
+            padding: $h2;
         }
         
-        @include media(s1) {
-            .CoverTitle {
+        .CoverTitle {
+            @include media(s1) {
                 grid-area: title;
-                @include type-setting(3);
+                display: flex;
+                flex-direction: column;
             }
-            .CoverSubTitle {
-                border-bottom: 0.5px dotted $light;
-                grid-area: subtitle;
-                margin: 0;
+        }
+        .CoverSubTitle {
+            @include media(s3) {
+                margin-top: $h1;
             }
-            .CoverText {
+        }
+        .CoverText {
+            @include media(s1) {
                 grid-area: text;
-                border: 0.5px dotted $light;
+                border-top: 1px dotted $light;
             }
         }
     }
@@ -69,7 +68,13 @@
 background-position: {topescroll}px;
 background-color:rgba(0, 0, 0, 0.{scrollY});
 ">
-    <h1 class="CoverTitle">{title}</h1>
-    <h2 class="CoverSubTitle">{subtitle}</h2>
+    <h1 class="CoverTitle">
+        {title} <br>
+        <span>
+            <h2 class="CoverSubTitle">
+                {subtitle}
+            </h2>
+        </span>
+    </h1>
     <p class="CoverText">{text}</p>
 </section>

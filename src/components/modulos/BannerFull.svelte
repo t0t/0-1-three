@@ -22,7 +22,7 @@
             grid-template-columns: 1fr 1fr;
         }
 
-        h1 {
+        h2 {
             color: $light_grey;
             font-weight: $weight_strong;
             @include margin-bottom(0);
@@ -61,7 +61,7 @@
     style="background-image:url('../img/{img}');"
     ></div>
     <div class="BannerFullText">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <p>{text}</p>
         <slot />
     </div>

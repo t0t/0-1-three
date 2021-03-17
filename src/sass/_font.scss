@@ -47,7 +47,7 @@ $line-heights: (
   -1: $base-line-height / 1.62,
   0: $base-line-height,
   1: $base-line-height * 1.62,
-  2: $base-line-height * 2.62,
+  2: $base-line-height * 2.3,
   3: $base-line-height * 4.236,
   4: $base-line-height * 4.236,
   5: $base-line-height * 6.854,
@@ -92,13 +92,19 @@ strong {
 }
 
 h1 {
-  @include type-setting(0);
+  @include type-setting(1);
   font-weight: bold;
-  @include media(s4) {
-    @include type-setting(1);
+  @include media(s1) {
+    @include type-setting(2);
+  }
+  @include media(s2) {
+    @include type-setting(3);
+  }
+  @include media(s3) {
+    @include type-setting(4);
   }
   @include media(s5) {
-    @include type-setting(2);
+    @include type-setting(5);
   }
 }
 
@@ -107,8 +113,6 @@ h2 {
   @include type-setting(0);
   @include media(s1) {
     @include type-setting(1);
-    margin-left: $h3;
-    margin-right: $h3;
   }
   @include media(s5) {
     @include type-setting(2);

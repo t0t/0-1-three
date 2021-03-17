@@ -28,9 +28,9 @@
 <!-- <Layout> -->
   <!-- <div slot="header"></div> -->
   <Cover 
-  title="Hermenéutica Holística (+0+1234)" 
-  subtitle="Sergio Forés" 
-  text="* El 'arte de descifrar el proceso de la Creación'. En la intersección de  Artes, Tecnologías y Sabiduría arcaica. Sentir Orden Forma Conexión" />
+  title="Sergio Forés" 
+  subtitle="Hermenéutica Holística +0+1234" 
+  text="Practico el arte de descifrar la Creación, en la intersección de artes, tecnologías y saberes. Sentir orden forma conexión." />
   
   <BannerFull title="+0+1234" text='El fundamento de la Creación radica en un orden arquetípico universal. Percibir ese orden conforma la conexión trascendental.' img="02234-14.jpg"><h2>⟁</h2></BannerFull>
 
