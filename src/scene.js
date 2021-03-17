@@ -12,8 +12,10 @@ import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
 
 // Sizes
 const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
+  width: 300,
+  height: 150
+  // width: window.innerWidth,
+  // height: window.innerHeight
 }
 
 // Cámara
@@ -130,9 +132,8 @@ scene.add( gridHelper );
 // const link = document.createElement( 'a' );
 // // link.style.display = 'none';
 // document.body.appendChild( link );
-
-// Renderer
-let renderer;
+// const canvas = document.querySelectorAll(".wegl")
+// console.log(canvas)
 
 // Animations
 const clock = new THREE.Clock()
@@ -144,8 +145,8 @@ const animate = () => {
 };
 
 const resize = () => {
-  sizes.width = window.innerWidth
-  sizes.height = window.innerHeight
+  sizes.width = window.innerWidth - 100;
+  sizes.height = window.innerHeight - 400;
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
   renderer.setSize(sizes.width, sizes.height);
@@ -154,7 +155,7 @@ const resize = () => {
 
 export const createScene = (el) => {
   const controls = new OrbitControls(camera,el)
-  controls.enabled = true;
+  controls.enabled = false;
   controls.enableZoom = false;
   controls.enableDamping = true
   controls.update()

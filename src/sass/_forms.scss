@@ -1,0 +1,19 @@
+@mixin tipo($args...){
+    @each $arg in $args{
+      &[type="#{$arg}"]:focus{
+        @content;
+      }
+    }
+  }
+  
+  input{
+    @include tipo(range, number, text){
+      border: solid 1px red;
+    }
+  }
+  
+  input{
+      @include tipo(email, date, search){
+      border: solid 1px blue;
+    }
+  }

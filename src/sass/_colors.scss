@@ -1,0 +1,46 @@
+$light: #e5e5e5;
+$light_2: #b4b3b1;
+$light_grey: #6c6c6c;
+$grey: #222;
+$grey_2: #5a5a5a;
+$dark_grey: #1a1a1a;
+$dark_2: #212121;
+$dark: #39322d;
+$black: black;
+$white: white;
+
+$primary:slategrey;
+$secondary:rosybrown;
+$tertiary:darken($light_grey,10%);
+$quaternary: #4d443e;
+$salmon: #d5896d;
+
+$highlight: $salmon;
+
+/* COLOR VARIABLES
+============================================= */
+$color_1: $grey;
+$color_2: $dark_grey;
+$color_3: $dark_grey;
+
+
+/* GRADIENT LISTS
+============================================= */
+
+$list1: $color_1, $color_2, $color_3; 
+
+$list2: $color_1 0%,$color_1 33%,$color_2 33%,$color_2 66%, $color_3 66%, $color_3 100%; 
+
+$list3: $color_1 0%,$color_1 10%,$color_2 25%,$color_2 39%,$color_3 79%,$color_3 100%; 
+
+$list4: $color_1, $color_2, $color_3, $color_1, $color_2, $color_3, $color_1, $color_2, $color_3; 
+
+@mixin gradient($direction, $list) { 
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);  
+}
+
+
+

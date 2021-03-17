@@ -33,8 +33,6 @@
     }
 
   img {
-    opacity: .55;
-    border-radius: 50%;
     object-fit: cover;
     max-width: 100%;
     z-index: 100;
@@ -49,19 +47,21 @@
     grid-template-columns: repeat(auto-fill, minmax($h7, 1fr));
 
     @include media(s3) {
-      gap: 1px;
-      width: 100%;
-      grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
-      grid-template-rows: 1fr;
-      grid-auto-rows: 1fr;
       justify-items: center;
+      gap: $h3;
     }
 
     .Obra {
 
-      @include media(s2) {
-        background: $black;
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+        padding: $h2;
       }
+
+      /* @include media(s2) {
+        background: $black;
+      } */
       &:hover {
         background: $dark_grey;
       }
