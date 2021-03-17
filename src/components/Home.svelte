@@ -27,9 +27,12 @@
 
 <!-- <Layout> -->
   <!-- <div slot="header"></div> -->
-  <Cover title="Hola, mi nombre es Sergio Forés" text="Me dedico al 'arte de descifrar el proceso de la Creación' (Hermenéutica Holística). Me encuentro en la intersección de ciertos tipos de Artes, tecnologías y conocimientos ancestrales" />
+  <Cover 
+  title="Sergio Forés Raga" 
+  subtitle="Hermenéutica Holística (+0+1234)" 
+  text="El 'arte de descifrar el proceso de la Creación'. En la intersección de  Artes, Tecnologías y Sabiduría arcaica. Sentir Orden Forma Conexión" />
   
-  <BannerFull title="+0+1234" text='El fundamento de la Creación, es un orden arquetípico universal, +0+1234, al que se va yendo eternamente y al que se llega en un instante. Vivo el Arte como técnica de meditación trascendental y como símbolo.' img="02234-14.jpg"><h2>⟁</h2></BannerFull>
+  <BannerFull title="+0+1234" text='El fundamento de la Creación radica en un orden arquetípico universal. Percibir ese orden conforma la conexión trascendental.' img="02234-14.jpg"><h2>⟁</h2></BannerFull>
 
   <BannerHalf variante={1} 
   title="Desde la poesía de la materia" 
@@ -101,7 +104,7 @@
     </div>
   </BannerHalf>
 
-  <BannerTexto header="About me" texto="Sergio Forés Raga se forma en Bellas Artes, Arte Electrónico y Diseño Digital. Ha ejercido desde 1999 como Diseñador Gráfico y Web. Desde 2010 especializado en Prototipado Frontend y UID. En 2020 adopta el mundo de la impresión 3D en su proceso creativo. Paralelamente desarrolla una Hermenéutica Holística de la Creación, como vía de autoconocimiento, que denomina TODH, Función TOT ó +0+1234."> 
+  <BannerTexto header="About me" texto="Me dedico al 'arte de descifrar el proceso de la Creación'. Me encuentro en la intersección de ciertos tipos de Artes, tecnologías y conocimientos ancestrales. Cursé estudios de Artes Aplicadas y procedimientos pictóricos, luego Arte Electrónico y Diseño Digital. Desde 1999 empecé ejerciendo como Diseñador Gráfico y Web. Desde 2010 me centré en Prototipado Frontend y desarrollo de UI. En 2020 incorporo la impresión 3D en mi proceso creativo y desarrollo una Hermenéutica Holística de la Creación, como vía de autoconocimiento, que denomino +0+1234."> 
   </BannerTexto>
   
   <Links />

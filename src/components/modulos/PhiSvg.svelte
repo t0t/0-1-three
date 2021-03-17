@@ -45,7 +45,6 @@
             transform: translate(60%, 50%);
         }
         fill: red;
-
     }
     .PhiSvg {
         display: grid;

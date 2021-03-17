@@ -1,5 +1,6 @@
 <script>
     export let title = ""
+    export let subtitle = ""
     export let text = ""
     let innerWidth, 
         innerHeight,
@@ -13,32 +14,58 @@
 
 <style lang="scss">
     @import "../../sass/_global.scss";
-    svg {
-        circle {
-            fill: salmon;
-        }
-        g {
-            transform: translate(50%, 17%);
-        }
-    }
+
     .Cover {
         height: 100vh;
-        padding: $h4;
+        padding: $h0;
         color: $white;
         background-size: cover;
         background-image: url("../img/01234-7.jpg");
         background-attachment: fixed;
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        text-align: center;
         background-repeat: no-repeat;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
 
-        h1 {
-            align-self: end;
+        @include media(s1) {
+            display: grid;
+            align-items: center;
+            grid-auto-flow: column;
+            gap: $h0;
+            grid-template-areas: 
+            "subtitle"
+            "title"
+            "text"
+            ;
         }
-        h2 {
-            align-self: start;
+        > * {
+            border: 0.5px dotted $grey;
+            padding: $h1;
+
+            @include media(s1) {
+                /* background-color: #fff; */
+            }
+        }
+        
+        @include media(s1) {
+            .CoverTitle {
+                grid-area: title;
+                /* align-self: end; */
+                /* border: 0.5px dotted $light; */
+            }
+            .CoverSubTitle {
+                grid-area: subtitle;
+                margin: 0;
+                /* align-self: start; */
+                /* border: 0.5px dotted $light; */
+            }
+            .CoverText {
+                /* align-self: start; */
+                grid-area: text;
+                /* border: 0.5px dotted $light; */
+            }
         }
     }
 </style>
@@ -49,6 +76,7 @@
 background-position: {topescroll}px;
 background-color:rgba(0, 0, 0, 0.{scrollY});
 ">
-    <h1>{title}</h1>
-    <h2>{text}</h2>
+    <h1 class="CoverTitle">{title}</h1>
+    <h2 class="CoverSubTitle">{subtitle}</h2>
+    <p class="CoverText">{text}</p>
 </section>
